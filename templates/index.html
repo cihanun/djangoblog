@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% include "includes/navbar.html" %}
+<div style = "margin-top : 100px;" class="jumbotron text-center">
+    <h3>Yazılım Bilimi Bloğuna Hoşgeldiniz</h3>
+    <p>Bu blogta geliştiriciler olarak blog yazılarınızı paylaşabilirsiniz ve insanlara yardımcı olabilirsiniz.</p>
+</div>
+
+<p>
+
+            {% if request.user.is_authenticated %}
+                Giriş Yapılmış,{{request.user.username}}
+            
+            {% else %}
+                Giriş Yapılmamış    
+            {% endif %}
+
+</p>
+
+
+
+
+{% endblock body %}
